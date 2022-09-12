@@ -1,4 +1,4 @@
 # software_development2022
-A liitle task for education.
+A liitle tasks for education.
 
-For starting using a code. Write in console "python3 main.py" or just start in the IDE.
+My homeworks and another projects.
