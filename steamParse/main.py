@@ -35,10 +35,6 @@ def steamParse(url):
         
         waitingTime
         
-        html = DRIVER.find_element('xpath', '//*[@id="advsearchform"]/div[1]/div/div[1]/div[1]/div[1]/div[1]').click()
-        
-        waitingTime
-        
         DRIVER.save_screenshot('scr1.png')
         DRIVER.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         DRIVER.save_screenshot('scr2.png')
@@ -80,8 +76,9 @@ def steamParse(url):
         
         waitingTime
 
-    except Exception as ex:
-        print(ex)
+    except Exception as excep:
+        print(excep)
+        
     finally:
         DRIVER.close()
         DRIVER.quit()
