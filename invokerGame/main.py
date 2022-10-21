@@ -29,7 +29,7 @@ def click_invoker(url):
 
         time.sleep(1)
 
-        for i in range(50):
+        while True:
             cold_snap(spell_quas, spell_ready, spell_one)
             ghost_walk(spell_quas, spell_wex, spell_ready, spell_one)
             ice_wall(spell_quas, spell_exort, spell_ready, spell_one)
