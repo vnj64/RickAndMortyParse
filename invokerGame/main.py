@@ -29,17 +29,17 @@ def click_invoker(url):
 
         time.sleep(1)
 
-        while True:
-            cold_snap(spell_quas, spell_ready, spell_one, spell_two)
-            ghost_walk(spell_quas, spell_wex, spell_ready, spell_one, spell_two)
-            ice_wall(spell_quas, spell_exort, spell_ready, spell_one, spell_two)
-            emp(spell_wex, spell_ready, spell_one, spell_two)
-            tornado(spell_wex, spell_quas, spell_ready, spell_one, spell_two)
-            alacrity(spell_wex, spell_exort, spell_ready, spell_one, spell_two)
-            sun_strike(spell_exort, spell_ready, spell_one, spell_two)
-            forge_spirit(spell_exort, spell_quas, spell_ready, spell_one, spell_two)
-            chaos_meteor(spell_exort, spell_wex, spell_ready, spell_one, spell_two)
-            blast(spell_exort, spell_quas, spell_wex, spell_ready, spell_one, spell_two)
+        for i in range(50):
+            cold_snap(spell_quas, spell_ready, spell_one)
+            ghost_walk(spell_quas, spell_wex, spell_ready, spell_one)
+            ice_wall(spell_quas, spell_exort, spell_ready, spell_one)
+            emp(spell_wex, spell_ready, spell_one)
+            tornado(spell_wex, spell_quas, spell_ready, spell_one)
+            alacrity(spell_wex, spell_exort, spell_ready, spell_one)
+            sun_strike(spell_exort, spell_ready, spell_one)
+            forge_spirit(spell_exort, spell_quas, spell_ready, spell_one)
+            chaos_meteor(spell_exort, spell_wex, spell_ready, spell_one)
+            blast(spell_exort, spell_quas, spell_wex, spell_ready, spell_one)
 
 
 
@@ -48,29 +48,26 @@ def click_invoker(url):
         print(e)
 
     finally:
+
+        time.sleep(10)
+
         DRIVER.close()
         DRIVER.quit()
 
-def cold_snap(spell_quas, spell_ready, spell_one, spell_two):
-    spell_one.click()
-    spell_two.click()
+def cold_snap(spell_quas, spell_ready, spell_one):
     for i in range(3):
         spell_quas.click()
     spell_ready.click()
     spell_one.click()
 
-def ghost_walk(spell_quas, spell_wex, spell_ready, spell_one, spell_two):
-    spell_one.click()
-    spell_two.click()
+def ghost_walk(spell_quas, spell_wex, spell_ready, spell_one):
     for i in range(2):
         spell_quas.click()
     spell_wex.click()
     spell_ready.click()
     spell_one.click()
 
-def ice_wall(spell_quas, spell_exort, spell_ready, spell_one, spell_two):
-    spell_one.click()
-    spell_two.click()
+def ice_wall(spell_quas, spell_exort, spell_ready, spell_one):
     for i in range(2):
         spell_quas.click()
 
@@ -78,18 +75,14 @@ def ice_wall(spell_quas, spell_exort, spell_ready, spell_one, spell_two):
     spell_ready.click()
     spell_one.click()
 
-def emp(spell_wex, spell_ready, spell_one, spell_two):
-    spell_one.click()
-    spell_two.click()
+def emp(spell_wex, spell_ready, spell_one):
     for i in range(3):
         spell_wex.click()
 
     spell_ready.click()
     spell_one.click()
 
-def tornado(spell_wex, spell_quas, spell_ready, spell_one, spell_two):
-    spell_one.click()
-    spell_two.click()
+def tornado(spell_wex, spell_quas, spell_ready, spell_one):
     for i in range(2):
         spell_wex.click()
 
@@ -97,9 +90,7 @@ def tornado(spell_wex, spell_quas, spell_ready, spell_one, spell_two):
     spell_ready.click()
     spell_one.click()
 
-def alacrity(spell_wex, spell_exort, spell_ready, spell_one, spell_two):
-    spell_one.click()
-    spell_two.click()
+def alacrity(spell_wex, spell_exort, spell_ready, spell_one):
     for i in range(2):
         spell_wex.click()
 
@@ -107,18 +98,14 @@ def alacrity(spell_wex, spell_exort, spell_ready, spell_one, spell_two):
     spell_ready.click()
     spell_one.click()
 
-def sun_strike(spell_exort, spell_ready, spell_one, spell_two):
-    spell_one.click()
-    spell_two.click()
+def sun_strike(spell_exort, spell_ready, spell_one):
     for i in range(3):
         spell_exort.click()
 
     spell_ready.click()
     spell_one.click()
 
-def forge_spirit(spell_exort, spell_quas, spell_ready, spell_one, spell_two):
-    spell_one.click()
-    spell_two.click()
+def forge_spirit(spell_exort, spell_quas, spell_ready, spell_one):
     for i in range(2):
         spell_exort.click()
     spell_quas.click()
@@ -126,9 +113,7 @@ def forge_spirit(spell_exort, spell_quas, spell_ready, spell_one, spell_two):
     spell_ready.click()
     spell_one.click()
 
-def chaos_meteor(spell_exort, spell_wex, spell_ready, spell_one, spell_two):
-    spell_one.click()
-    spell_two.click()
+def chaos_meteor(spell_exort, spell_wex, spell_ready, spell_one):
     for i in range(2):
         spell_exort.click()
 
@@ -136,9 +121,7 @@ def chaos_meteor(spell_exort, spell_wex, spell_ready, spell_one, spell_two):
     spell_ready.click()
     spell_one.click()
 
-def blast(spell_exort, spell_quas, spell_wex, spell_ready, spell_one, spell_two):
-    spell_one.click()
-    spell_two.click()
+def blast(spell_exort, spell_quas, spell_wex, spell_ready, spell_one):
     spell_quas.click()
     spell_wex.click()
     spell_exort.click()
