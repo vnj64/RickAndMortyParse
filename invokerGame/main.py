@@ -1,138 +1,36 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import time
 
+DRIVER = webdriver.Chrome(YOUR_PATH)
+
+URL = 'https://www.invokergame.com/'
 
 
-DRIVER = webdriver.Chrome(executable_path="/home/sirius/parsers/all parsers/invokerGame/chromedriver/chromedriver")
+DRIVER.get(URL)
 
-def click_invoker(url):
-    DRIVER.get(url=url)
+DRIVER.find_element(By.XPATH,"/html/body/form/div[3]/div[6]/div[2]/div[2]/div/table/tbody/tr[2]/td[1]/input").click()
+steam_login = DRIVER.find_element('xpath', '//*[@id="LoginNotification"]/div/table/tbody/tr/td[3]/a')
+steam_login.click()
 
-    survival_button = DRIVER.find_element('xpath', '/html/body/form/div[3]/div[6]/div[2]/div[2]/div/table/tbody/tr[2]/td[1]/input')
-    survival_button.click()
-
-
-    start_game = DRIVER.find_element('xpath', '/html/body/form/div[3]/div[6]/div[2]/div[3]/div[1]/nobr/table/tbody/tr/td/input')
-    start_game.click()
-
-    spell_quas = DRIVER.find_element('xpath', '//*[@id="GameInterface"]/div[2]/div[1]')
-    spell_wex = DRIVER.find_element('xpath', '//*[@id="GameInterface"]/div[2]/div[2]')
-    spell_exort = DRIVER.find_element('xpath', '//*[@id="GameInterface"]/div[2]/div[3]')
-    spell_one = DRIVER.find_element('xpath', '//*[@id="GameInterface"]/div[2]/div[4]')
-    spell_two = DRIVER.find_element('xpath', '//*[@id="GameInterface"]/div[2]/div[5]')
-    spell_ready = DRIVER.find_element('xpath', '//*[@id="GameInterface"]/div[2]/div[6]')
+time.sleep(15)
 
 
-    time.sleep(1)
-
-    while True:
-        cold_snap(spell_quas, spell_ready, spell_one)
-        ghost_walk(spell_quas, spell_wex, spell_ready, spell_one)
-        ice_wall(spell_quas, spell_exort, spell_ready, spell_one)
-        emp(spell_wex, spell_ready, spell_one)
-        tornado(spell_wex, spell_quas, spell_ready, spell_one)
-        alacrity(spell_wex, spell_exort, spell_ready, spell_one)
-        sun_strike(spell_exort, spell_ready, spell_one)
-        forge_spirit(spell_exort, spell_quas, spell_ready, spell_one)
-        chaos_meteor(spell_exort, spell_wex, spell_ready, spell_one)
-        blast(spell_exort, spell_quas, spell_wex, spell_ready, spell_one)
+DRIVER.find_element(By.XPATH,"/html/body/form/div[3]/div[6]/div[2]/div[3]/div[1]/nobr/table/tbody/tr").click()
 
 
 
 
-def cold_snap(spell_quas, spell_ready, spell_one):
-    for i in range(3):
-        spell_quas.click()
-    spell_ready.click()
-    spell_one.click()
 
-
-
-def ghost_walk(spell_quas, spell_wex, spell_ready, spell_one):
-    for i in range(2):
-        spell_quas.click()
-    spell_wex.click()
-    spell_ready.click()
-    spell_one.click()
-
-
-
-def ice_wall(spell_quas, spell_exort, spell_ready, spell_one):
-    for i in range(2):
-        spell_quas.click()
-
-    spell_exort.click()
-    spell_ready.click()
-    spell_one.click()
-
-
-
-def emp(spell_wex, spell_ready, spell_one):
-    for i in range(3):
-        spell_wex.click()
-
-    spell_ready.click()
-    spell_one.click()
-
-
-
-def tornado(spell_wex, spell_quas, spell_ready, spell_one):
-    for i in range(2):
-        spell_wex.click()
-
-    spell_quas.click()
-    spell_ready.click()
-    spell_one.click()
-
-
-
-def alacrity(spell_wex, spell_exort, spell_ready, spell_one):
-    for i in range(2):
-        spell_wex.click()
-
-    spell_exort.click()
-    spell_ready.click()
-    spell_one.click()
-
-
-
-
-def sun_strike(spell_exort, spell_ready, spell_one):
-    for i in range(3):
-        spell_exort.click()
-
-    spell_ready.click()
-    spell_one.click()
-
-
-
-def forge_spirit(spell_exort, spell_quas, spell_ready, spell_one):
-    for i in range(2):
-        spell_exort.click()
-    spell_quas.click()
-
-    spell_ready.click()
-    spell_one.click()
-
-
-
-def chaos_meteor(spell_exort, spell_wex, spell_ready, spell_one):
-    for i in range(2):
-        spell_exort.click()
-
-    spell_wex.click()
-    spell_ready.click()
-    spell_one.click()
-
-
-
-def blast(spell_exort, spell_quas, spell_wex, spell_ready, spell_one):
-    spell_quas.click()
-    spell_wex.click()
-    spell_exort.click()
-    spell_ready.click()
-    spell_one.click()
-
-
-
-click_invoker('https://www.invokergame.com/')
+body = DRIVER.find_element(By.XPATH,"/html/body")
+while True:
+    body.send_keys("QQQRD")
+    body.send_keys("QQWRD")
+    body.send_keys("QQERD")
+    body.send_keys("WWWRD")
+    body.send_keys("WWERD")
+    body.send_keys("WWQRD")
+    body.send_keys("EEERD")
+    body.send_keys("EEQRD")
+    body.send_keys("EEWRD")
+    body.send_keys("QWERD")
